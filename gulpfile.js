@@ -42,8 +42,10 @@ gulp.task('sass', function() {
 // configure which files to watch and what tasks to use on file changes & setup BrowserSync
 gulp.task('watch', function() {
   browserSync.init({
-      proxy: "localhost"
-  });
+                server: {
+                        baseDir: "./"
+                 }
+        });
   gulp.watch("*.html").on('change', browserSync.reload);
 
   gulp.watch(jsSrc, ['jshint']);
