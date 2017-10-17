@@ -1,4 +1,4 @@
-# Gulp + bootstrap boilerplate 
+# Simple gulp runner with babel/sass/eslint
 
-to run gulp type `gulp watch`
+to run just type `gulp watch`
 
