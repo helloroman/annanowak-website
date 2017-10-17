@@ -23,7 +23,16 @@ var gulp   = require('gulp'),
 // configure the jshint task
 gulp.task('eslint', function() {
   return gulp.src(es6Src)
-    .pipe(eslint())
+    .pipe(eslint({
+      parserOptions: {
+            "ecmaVersion": 6
+        },
+      rules: {
+            "arrow-body-style": ["error", "always"],
+            "no-var": "error",
+            "prefer-const": "error"
+        }
+    }))
     .pipe(eslint.results(results => {
     	// Called once for all ESLint results. 
         console.log(`Total Results: ${results.length}`);
