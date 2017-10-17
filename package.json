@@ -1,26 +1,27 @@
 {
   "name": "roman-runner",
-  "version": "0.0.1",
-  "description": "Sweet runner of mine",
+  "version": "0.0.2",
+  "description": "Simple es6/babel runner with sass",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Adrian Ratajczak (modified by Adam Romański)",
-  "license": "ISC",
+  "author": "Adam Romański",
+  "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.12.5",
-    "es6-promise": "~3.1.2",
+    "es6-promise": "~4.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "4.0.0",
-    "gulp-clean-css": "^2.0.6",
-    "gulp-jshint": "^2.0.0",
-    "gulp-notify": "^2.2.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "^2.0.0-alpha",
-    "gulp-util": "^3.0.7",
-    "jshint": "^2.9.2",
-    "jshint-stylish": "^2.1.0"
+    "gulp-util": "^3.0.7"
   }
 }

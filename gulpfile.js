@@ -2,27 +2,39 @@
 require('es6-promise').polyfill();
 // grab our packages
 var gulp   = require('gulp'),
-    jshint = require('gulp-jshint');
-    sass   = require('gulp-sass');
-    sourcemaps = require('gulp-sourcemaps');
-    autoprefixer = require('gulp-autoprefixer');
-    browserSync = require('browser-sync').create();
-    plumber = require('gulp-plumber');
-    notify = require("gulp-notify");
-    cleanCSS = require('gulp-clean-css');
+    sass   = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create(),
+    plumber = require('gulp-plumber'),
+    notify = require("gulp-notify"),
+    cleanCSS = require('gulp-clean-css'),
+    babel = require('gulp-babel'),
+    eslint = require('gulp-eslint');
 
-    jsSrc = 'js/**/*.js';
+    es6Src = 'es6Src/**/*.js';
     scssSrc = 'scss/main.scss';
     watchScss = 'scss/*.scss';
     cssPub = 'css';
+    jsPub = 'js';
 
 
 
 // configure the jshint task
-gulp.task('jshint', function() {
-  return gulp.src(jsSrc)
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
+gulp.task('eslint', function() {
+  return gulp.src(es6Src)
+    .pipe(eslint())
+    .pipe(eslint.results(results => {
+    	// Called once for all ESLint results. 
+        console.log(`Total Results: ${results.length}`);
+        console.log(`Total Warnings: ${results.warningCount}`);
+        console.log(`Total Errors: ${results.errorCount}`);
+    }))
+    .pipe(eslint.format())
+    .pipe(babel({
+      presets: ['env']
+  }))
+  .pipe(gulp.dest(jsPub));
 });
 
 // configure the sass task
@@ -32,7 +44,7 @@ gulp.task('sass', function() {
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+    .pipe(autoprefixer('last 4 version'))
     .pipe(sourcemaps.write())
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(cssPub))
@@ -48,7 +60,7 @@ gulp.task('watch', function() {
                  }
         });
   gulp.watch("*.html").on('change', browserSync.reload);
-  gulp.watch(jsSrc, ['jshint']).on('change', browserSync.reload);
+  gulp.watch(es6Src, ['eslint']).on('change', browserSync.reload);
   gulp.watch(watchScss, ['sass']);
 
 });
