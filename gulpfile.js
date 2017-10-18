@@ -40,6 +40,7 @@ gulp.task('eslint', function() {
         console.log(`Total Errors: ${results.errorCount}`);
     }))
     .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
     .pipe(babel({
       presets: ['env']
   }))
