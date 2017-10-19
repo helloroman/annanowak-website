@@ -1,0 +1,134 @@
+@media(min-width: 1000px) {
+  .heroimage__text--subsites {
+    right: 50px;
+  }
+
+  .story {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .story__single {
+    width: 100%;
+    align-items: normal;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  .story__single:nth-child(odd) .single__text,
+  .story__single:nth-child(even) .single__photo {
+    align-self: flex-start;
+  }
+  .story__single:nth-child(even) .single__text,
+  .story__single:nth-child(odd) .single__photo {
+    align-self: flex-end;
+  }
+
+  .story__single:last-child {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .story__single:last-child .single__photo {
+    width: 400px;
+    height: 700px;
+  }
+
+  .single__text {
+    position: relative;
+    z-index: 999;
+    width: 500px;
+    background: white;
+    border-radius: 1px;
+    box-shadow: $box-shadow;
+    padding: 60px 40px;
+    @include textspace(13px, 1.5);
+  }
+
+  .single__photo {
+    width: 700px;
+    height: 450px;
+  }
+
+  .single__sidetext {
+    bottom: 0;
+    padding: 0;
+    width: 250px;
+    box-shadow: none;
+    background: none;
+
+    h1 {
+      font-family: $playfair;
+      @include textspace(18px, 1.2);
+    }
+
+    p {
+      @include textspace(12px, 1.5);
+    }
+  }
+
+  .story__single:nth-child(odd) .single__sidetext {
+    left: -165px;
+  }
+
+  .story__single:nth-child(even) .single__sidetext {
+    left: unset;
+    right: -165px;
+  }
+
+}
+
+@media(min-width:1250px) {
+  .single__photo {
+    width: 850px;
+    height: 600px;
+  }
+
+  .story__single:last-child {
+    width: 70%;
+  }
+}
+
+@media(min-width:1420px) {
+  .story {
+    width: 100%;
+  }
+
+  .story__single {
+    width: 90%;
+  }
+
+  .single__text {
+    padding: 70px;
+    width: 600px;
+  }
+
+  .story__single:last-child {
+    width: 70%;
+  }
+
+  .story__single:last-child .single__photo {
+    width: 600px;
+    height: 1000px;
+  }
+}
+
+@media(min-width:1600px) {
+  .single__photo {
+    width: 1000px;
+  }
+
+  .heroimage--dance_artist {
+    background-position: 50% 80%;
+  }
+}
+
+@media(min-width:1800px) {
+  .story__single {
+    width: 80%;
+  }
+
+  .story__single:last-child {
+    width: 60%;
+  }
+}

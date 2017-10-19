@@ -28,9 +28,9 @@ gulp.task('eslint', function() {
             "ecmaVersion": 6
         },
       rules: {
-            "arrow-body-style": ["error", "always"],
-            "no-var": "error",
-            "prefer-const": "error"
+            "arrow-body-style": ["warn", "always"],
+            "no-var": "warn",
+            "prefer-const": "warn"
         }
     }))
     .pipe(eslint.results(results => {

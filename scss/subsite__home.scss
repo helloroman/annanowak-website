@@ -1,0 +1,33 @@
+.heroimage--home {
+  background: url('../assets/img/sequence/seq_12.jpg') no-repeat;
+  background-size: cover;
+  background-position: 50% 70%;
+  transition: .2s;
+}
+
+.bio {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.bio__avatar {
+  display: none;
+}
+
+.bio__info {
+  position: relative;
+  width: 100%;
+  font-family: $montserrat;
+  font-weight: 300;
+  @include textspace(15px, 1.5);
+}
+
+@media (min-width: 650px) {
+  .bio__info {
+    margin: 0 auto;
+    width: 450px;
+  }
+}
