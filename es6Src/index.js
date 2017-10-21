@@ -22,7 +22,7 @@
     });
 
     /*
-        Hover effects for open menu (changes background for each menuItem hover)
+        Hover effects for opened menu (changes background for each menuItem hover)
      */
 
     const menuOverlayDefaultStyle = menuOverlay.style;
@@ -86,11 +86,11 @@
             singleSideText.forEach(text => {
                 text.classList.add('rellax');
                 text.style.transform = 'rotate(-90deg)';
-                text.dataset.rellaxPercentage = '-1.5';
+                text.dataset.rellaxPercentage = '0';
             });
 
             const rellax = new Rellax('.rellax', {
-                speed: 1.8,
+                speed: 1.7,
                 center: false,
                 round: true
             });
@@ -136,10 +136,10 @@
         if (itemsItem.tagName === "LI") {
             pageLoad(itemsItem.dataset.name);
             menu.classList.remove('menu--open');
-            hamburgerButton.classList.remove('header__hamburger-open');
+            hamburgerButton.classList.remove('header__hamburger--open');
         }
     });
 
     // load homepage when page runs
-    pageLoad(home);
+    pageLoad(educator);
 }());

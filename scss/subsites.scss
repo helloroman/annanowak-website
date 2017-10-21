@@ -1,0 +1,70 @@
+.heroimage__text--subsites {
+  h1 {
+    text-transform: lowercase;
+    font-size: 1em;
+  }
+
+  p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1em;
+  }
+}
+
+.story {
+  height: auto;
+  padding: 20px 0;
+}
+
+.story__single {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single__text {
+  font-family: $montserrat;
+  @include textspace(12px, 1.5);
+  width: 100%;
+  padding: 25px 15px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.single__photo {
+  object-fit: cover;
+  margin: 20px 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 20px 15px;
+}
+
+.single__photo img {
+  width: 100%;
+}
+
+.single__sidetext {
+  width: auto;
+  background: $bgcolor;
+  color: $black;
+  box-shadow: $box-shadow;
+
+  h1 {
+    margin: 0;
+    font-family: $montserrat;
+    font-weight: 600;
+    @include textspace(13px, 1.5);
+  }
+
+  p{
+    margin: 0;
+    font-family: $montserrat;
+    font-weight: 300;
+    @include textspace(10px, 1.5);
+  }
+}
