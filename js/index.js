@@ -60,6 +60,9 @@
             window.addEventListener('resize', function () {
                 heroImage.style.height = window.innerHeight + 'px';
             });
+
+            //reset Y scroll position
+            window.scrollTo(0, 0);
         }
 
         function setEmbededVideoSize() {
@@ -124,7 +127,7 @@
                 currentPage = page;
                 wrapper.innerHTML = xhr.responseText;
 
-                history.pushState(null, null, currentPage + '.html');
+                history.pushState(null, null, '#' + currentPage);
 
                 setHeroImageHeight();
 
@@ -167,6 +170,14 @@
         }
     });
 
-    // load homepage when page runs
-    pageLoad(choreographer);
+    if (window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        if (hash !== home && hash !== dance_artist && hash !== educator && hash !== choreographer && hash !== on_the_move) {
+            pageLoad(home);
+        } else {
+            pageLoad(hash);
+        }
+    } else {
+        pageLoad(home);
+    }
 })();

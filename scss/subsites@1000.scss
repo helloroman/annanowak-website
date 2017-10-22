@@ -27,12 +27,12 @@
   }
 
   .story__single--vertical {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
 
   .story__single--vertical .single__photo {
-    width: 400px;
+    width: 500px;
     height: 700px;
   }
 
@@ -122,6 +122,12 @@
 
   .story__single--vertical {
     width: 70%;
+    margin: 0 auto;
+  }
+
+  .story__single--vertical .single__photo {
+    width: 500px;
+    height: 700px;
   }
 }
 
@@ -141,6 +147,14 @@
 
   .story__single--vertical {
     width: 70%;
+  }
+
+  .story__single--vertical .single__photo {
+    width: 600px;
+  }
+
+  .story__single--vertical .single__text {
+    top: -100px;
   }
 }
 
