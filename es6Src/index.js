@@ -14,6 +14,10 @@
         menuOverlay = document.querySelector('.menu__overlay'),
         menuItem = document.querySelectorAll('.items__item');
 
+    const loader = document.querySelector('.loading');
+
+    loader.setAttribute('style', 'display: flex');
+
 
     hamburgerButton.addEventListener('click', function(e) {
         e.preventDefault();
@@ -120,6 +124,18 @@
             if (xhr.readyState === 4 && xhr.status === 200) {
                 currentPage = page;
                 wrapper.innerHTML = xhr.responseText;
+
+                if(currentPage !== home) {
+                    const singles = document.querySelectorAll('.story__single');
+                    imagesLoaded( singles, function() {
+                        loader.setAttribute('style', 'display: none');
+                    });
+                } else {
+                    const heroimageHome = document.querySelector('.heroimage--home');
+                    imagesLoaded( heroimageHome, { background: true }, function() {
+                        loader.setAttribute('style', 'display: none');
+                    });
+                }
 
                 history.pushState(null,null, `#${currentPage}`);
 

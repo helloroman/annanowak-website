@@ -16,6 +16,10 @@
         menuOverlay = document.querySelector('.menu__overlay'),
         menuItem = document.querySelectorAll('.items__item');
 
+    var loader = document.querySelector('.loading');
+
+    loader.setAttribute('style', 'display: flex');
+
     hamburgerButton.addEventListener('click', function (e) {
         e.preventDefault();
         this.classList.toggle('header__hamburger--open');
@@ -126,6 +130,18 @@
             if (xhr.readyState === 4 && xhr.status === 200) {
                 currentPage = page;
                 wrapper.innerHTML = xhr.responseText;
+
+                if (currentPage !== home) {
+                    var singles = document.querySelectorAll('.story__single');
+                    imagesLoaded(singles, function () {
+                        loader.setAttribute('style', 'display: none');
+                    });
+                } else {
+                    var heroimageHome = document.querySelector('.heroimage--home');
+                    imagesLoaded(heroimageHome, { background: true }, function () {
+                        loader.setAttribute('style', 'display: none');
+                    });
+                }
 
                 history.pushState(null, null, '#' + currentPage);
 
