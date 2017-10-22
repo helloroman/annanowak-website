@@ -62,6 +62,22 @@
             });
         }
 
+        function setEmbededVideoSize() {
+            var iframe = document.querySelector('.story__single--video .single__photo iframe');
+            iframe.setAttribute('width', '' + window.innerWidth * 0.8);
+            iframe.setAttribute('height', '' + window.innerHeight * 0.8);
+
+            if (isMobile) {
+                iframe.setAttribute('width', '' + window.innerWidth * 0.9);
+                iframe.setAttribute('height', '' + window.innerHeight * 0.3);
+            }
+
+            window.addEventListener('resize', function () {
+                iframe.setAttribute('width', '' + window.innerWidth * 0.8);
+                iframe.setAttribute('height', '' + window.innerHeight * 0.8);
+            });
+        }
+
         /*
             Function below creates an effect that when you move your mouse
             on homepage, the dancer is 'moving' – it divides screen on 16
@@ -108,6 +124,8 @@
                 currentPage = page;
                 wrapper.innerHTML = xhr.responseText;
 
+                history.pushState(null, null, currentPage + '.html');
+
                 setHeroImageHeight();
 
                 if (currentPage === home) {
@@ -116,6 +134,10 @@
 
                 if (currentPage !== home && !isMobile) {
                     createParallaxEffect();
+                }
+
+                if (currentPage === choreographer) {
+                    setEmbededVideoSize();
                 }
             }
         };
@@ -146,5 +168,5 @@
     });
 
     // load homepage when page runs
-    pageLoad(educator);
+    pageLoad(choreographer);
 })();

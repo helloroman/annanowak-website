@@ -45,6 +45,20 @@
     width: 90%;
   }
 
+  .story__single--video {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .story__single--video .single__photo {
+    width: unset;
+    height: unset;
+  }
+  //
+  //.story__single--video .single__photo {
+  //  left: -30vw;
+  //}
+
   .story__single:nth-child(odd) .single__text,
   .story__single:nth-child(even) .single__photo {
     align-self: flex-start;
