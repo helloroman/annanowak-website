@@ -8,7 +8,6 @@
         educator = 'educator',
         on_the_move = 'on_the_move';
 
-    // menu items
     const hamburgerButton = document.querySelector('.header__hamburger'),
         menu = document.querySelector('.menu'),
         menuOverlay = document.querySelector('.menu__overlay'),
@@ -25,10 +24,6 @@
         menu.classList.toggle('menu--open');
     });
 
-    /*
-        Hover effects for opened menu (changes background for each menuItem hover)
-     */
-
     const menuOverlayDefaultStyle = menuOverlay.style;
 
     function menuItemMouseEnter() {
@@ -36,24 +31,18 @@
         menuOverlay.style.backgroundImage = `url('./assets/img/menu_backgrounds/menu__${backgroundImage}.jpg')`;
     }
     function menuItemMouseLeave() {
-        // reset background image on mouse leave
         menuOverlay.style = menuOverlayDefaultStyle;
     }
 
     menuItem.forEach(item => {item.addEventListener('mouseenter', menuItemMouseEnter)});
     menuItem.forEach(item => {item.addEventListener('mouseleave', menuItemMouseLeave)});
 
-
-    /*
-       Load pages
-     */
-
     function pageLoad(page) {
         const url = `${page}.html`,
             wrapper = document.querySelector('.wrapper');
 
         function setHeroImageHeight() {
-            // set initial value of heroimage
+
             const heroImage = document.querySelector('.heroimage');
             heroImage.style.height = `${window.innerHeight}px`;
 
@@ -61,7 +50,6 @@
                 heroImage.style.height = `${window.innerHeight}px`;
             });
 
-            //reset Y scroll position
             window.scrollTo(0,0);
         }
 
@@ -80,14 +68,6 @@
                 iframe.setAttribute('height', `${window.innerHeight * 0.8}`);
             });
         }
-
-        /*
-            Function below creates an effect that when you move your mouse
-            on homepage, the dancer is 'moving' – it divides screen on 16
-            equal parts, and basing on part that you are currently on it
-            changes the number of background image (acutally it changes
-            classname that is defined in css)
-         */
 
         function homePagePhotoSequenceEffect() {
             const heroImageHome = document.querySelector('.heroimage--home');
@@ -152,7 +132,6 @@
                 if(currentPage === choreographer) {
                     setEmbededVideoSize();
                 }
-
             }
         };
         xhr.open('GET', `./subsites/${url}`, true);

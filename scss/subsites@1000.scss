@@ -50,6 +50,15 @@
     margin: 0 auto;
   }
 
+  .story__single--video:nth-child(2) {
+    position: relative;
+    top: 150px;
+  }
+
+  .story__single--video .single__text p {
+    margin-top: 10px;
+  }
+
   .story__single--video .single__photo {
     width: unset;
     height: unset;
@@ -93,8 +102,9 @@
     background: none;
 
     h1 {
+      margin-bottom: 3px;
       font-family: $playfair;
-      @include textspace(18px, 1.2);
+      @include textspace(18px, 1.3);
     }
 
     p {
