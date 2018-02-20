@@ -139,6 +139,16 @@
                 if (currentPage === choreographer) {
                     setEmbededVideoSize();
                 }
+
+                if (currentPage === educator) {
+                    var last = document.querySelector('.lastfix');
+                    last.style.height = '120px';
+                }
+
+                if (currentPage === on_the_move) {
+                    var _last = document.querySelector('.lastfix');
+                    _last.style.height = '350px';
+                }
             }
         };
         xhr.open('GET', './subsites/' + url, true);

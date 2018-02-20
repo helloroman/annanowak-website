@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Anna Nowak ovh">
+    <serverData>
+      <paths name="Anna Nowak ovh">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/oldjs" />
+            <excludedPath local="true" path="$PROJECT_DIR$/es6Src" />
+            <excludedPath local="true" path="$PROJECT_DIR$/scss" />
+            <excludedPath local="true" path="$PROJECT_DIR$/package-lock.json" />
+            <excludedPath local="true" path="$PROJECT_DIR$/package.json" />
+            <excludedPath local="true" path="$PROJECT_DIR$/README.md" />
+            <excludedPath local="true" path="$PROJECT_DIR$/gulpfile.js" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

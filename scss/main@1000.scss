@@ -55,7 +55,7 @@
     position: relative;
     right: 150px;
     margin: 0;
-    width: 180px;
+    width: 200px;
     text-align: left;
 
     h1 {
@@ -75,7 +75,7 @@
 
   .heroimage__text {
     right: 250px;
-    width: 200px;
+    width: 230px;
 
     h1 {
       @include textspace(30px, 1.2);
