@@ -123,6 +123,18 @@
 
                 if(currentPage === home) {
                     homePagePhotoSequenceEffect();
+                    const modalToggleOpen = document.querySelector('.open-thanks-js');
+                    const modalToggleClose = document.querySelector('.close-thanks-js');
+                    const thanksModal = document.querySelector('.thanks-modal');
+                    modalToggleOpen.addEventListener('click', () => {
+                       thanksModal.classList.add('thanks-modal--open');
+                    });
+
+                    modalToggleClose.addEventListener('click', () => {
+                       if(thanksModal.classList.contains('thanks-modal--open')) {
+                           thanksModal.classList.remove('thanks-modal--open');
+                       }
+                    });
                 }
 
                 if(currentPage !== home && !isMobile) {

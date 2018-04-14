@@ -130,6 +130,18 @@
 
                 if (currentPage === home) {
                     homePagePhotoSequenceEffect();
+                    var modalToggleOpen = document.querySelector('.open-thanks-js');
+                    var modalToggleClose = document.querySelector('.close-thanks-js');
+                    var thanksModal = document.querySelector('.thanks-modal');
+                    modalToggleOpen.addEventListener('click', function () {
+                        thanksModal.classList.add('thanks-modal--open');
+                    });
+
+                    modalToggleClose.addEventListener('click', function () {
+                        if (thanksModal.classList.contains('thanks-modal--open')) {
+                            thanksModal.classList.remove('thanks-modal--open');
+                        }
+                    });
                 }
 
                 if (currentPage !== home && !isMobile) {

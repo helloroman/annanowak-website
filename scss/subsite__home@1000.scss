@@ -82,6 +82,42 @@
     margin: 0;
     @include textspace(12px, 1.5);
   }
+
+
+  .thanks-modal {
+    padding: 35px 30px;
+    background: white;
+    width: 600px;
+    height: auto;
+    border: 1px solid #d1d2cf;
+    top: 50%;
+
+    .item--description {
+      @include textspace(14px, 1.3);
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .item--name {
+      @include textspace(16px, 2);
+      margin: 0;
+    }
+
+    .item--link {
+      margin: 0;
+      a {
+        @include textspace(14px, 1.5);
+        color: #201F1F;
+        font-weight: bold;
+      }
+    }
+
+    .special-thanks__toggle {
+      @include textspace(16px, 1);
+      margin: 40px 0;
+      font-weight: bold;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -127,5 +163,13 @@
   .bio__info {
     width: 550px;
     @include textspace(14px, 1.5);
+  }
+}
+
+@media (min-width: 1900px) {
+
+  .bio__avatar {
+    background-size: 30%;
+    background-position: 35% 35%;
   }
 }

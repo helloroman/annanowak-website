@@ -1,6 +1,13 @@
 @media(min-width: 1000px) {
   .heroimage__text--subsites {
-    right: 50px;
+    background: rgba(#201f1f, .7);
+    color: #f7f7f7;
+    width: 300px;
+    height: auto;
+    padding: 10px 30px;
+    top: 0;
+    right: 0;
+    box-shadow: -5px 15px 20px -10px rgba(#201f1f, .3);
   }
 
   .story {

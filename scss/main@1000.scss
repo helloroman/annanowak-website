@@ -58,7 +58,7 @@
     width: 200px;
     text-align: left;
 
-    h1 {
+    h1, span {
       @include textspace(25px, 1.2);
     }
 
