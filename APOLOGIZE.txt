@@ -1,0 +1,2 @@
+Sorka za spamowanie pull requestami , nie miałem skąd wziąć fork repo a ćwiczę gita , mam nadzieję że się nie obrazisz , lubię oglądać twój kanał na YT więc pomyślałem że zforkuje twoje repo dla ćwiczeń, pozdrawiam serdecznie helloRoman :)
+ps. po ogarnięciu ćwiczenia usunę wszystko , jeszcze raz przepraszam jeżeli to problem :)
